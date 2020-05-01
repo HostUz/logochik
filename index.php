@@ -1,7 +1,7 @@
 <?php
 $admin = "503177249";
 
-define('API_KEY','1015518603:AAFq734GfOPHwqK3sJ9HeaKj2fNpmBlMHVg');
+define('API_KEY','1276643692:AAGTsJp5_mlc7d7dXDLxV_39sda3kXR6plY');
 function del($nomi){
 array_map('unlink', glob("step/$nomi.*"));
 }
