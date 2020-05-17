@@ -1,30 +1,31 @@
 <?php
+$get = file_get_contents("https://islom.uz/");
+$ex = explode("\n", $get);
 
-if (!file_exists('madeline.php')) {
-    copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
-}
-include 'madeline.php';
+$tong = str_replace("<div id='tc1' class='p_clock '><b>", "", $ex[397]);
+$tong = str_replace("</b></div>", "", $tong);
 
-$MadelineProto = new \danog\MadelineProto\API('session.madeline');
-$MadelineProto->start();
-$time=date("H:i",strtotime("2 hour"));
-$hour = date("H",strtotime("2 hour"));
-$kun=date("d-m-Y",strtotime("2 hour"));
- $nik = ["OnlineWolf","Xudoberdi"];
-  $nikrand=array_rand($nik);
-  $niktxt="$nik[$nikrand]";
-$MadelineProto->account->updateProfile(['first_name'=>"$time $niktxt $time",'about'=>"📆$kun ▪️ ⏰$time Vaqt ko'rsatadi kimni kim ekanligini!"]);
+$quyosh = str_replace("<div id='tc2' class='p_clock '><b>", "", $ex[405]);
+$quyosh = str_replace("</b></div>", "", $quyosh);
 
-$yil = date("Y", strtotime("2 hour"));
+$peshin = str_replace("<div id='tc3' class='p_clock c_active'><b>", "", $ex[412]);
+$peshin = str_replace("</b></div>", "", $peshin);
 
-$logo = "https://promaster.xvest.ru/OnlineWolf/index.php?text=ferghana";
+$asr = str_replace("<div id='tc4' class='p_clock '><b>", "", $ex[419]);
+$asr = str_replace("</b></div>", "", $asr);
 
-if($yil == "2020"){
-header('Content-type: image/jpg');
-file_put_contents("got.jpg",file_get_contents($logo));
-$info = $MadelineProto->get_full_info('me');
-$inputPhoto = ['_' => 'inputPhoto', 'id' => $info['User']['photo']['photo_id'], 'access_hash' => $info['User']['access_hash'], 'file_reference' => 'bytes'];
-$deletePhoto = $MadelineProto->photos->deletePhotos(['id'=>[$inputPhoto]]);
-}
-$MadelineProto->photos->updateProfilePhoto(['file' => "got.jpg" ]);
+$shom = str_replace("<div id='tc5' class='p_clock '><b>", "", $ex[426]);
+$shom = str_replace("</b></div>", "", $shom);
+
+$xufton = str_replace("<div id='tc6' class='p_clock '><b>", "", $ex[433]);
+$xufton = str_replace("</b></div>", "", $xufton);
+
+echo "Namoz vaqtlari<br>
+🕋Tong: $tong <br>
+🕋Quyosh: $quyosh <br>
+🕋Peshin: $peshin <br>
+🕋Asr: $asr <br>
+🕋Shom: $shom <br>
+🕋Xufton: $xufton <br>
+Yaratuvchi <a href='https://t.me/ProMasterPHP'>Turgunboyev Diyorbek</a>";
 ?>
