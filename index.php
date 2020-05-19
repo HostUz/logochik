@@ -21,32 +21,32 @@ $shom1 = str_replace("</b></div>", "", $shom1);
 $xufton1 = str_replace("<div id='tc6' class='p_clock '><b>", "", $ex[433]);
 $xufton1 = str_replace("</b></div>", "", $xufton1);
 
-if(($time >= "00:00") and ($time <= $quyosh1)){
+if(($time >= "00:00") and ($time <= "04:00")){
 $code = "<div id='tc1' class='p_clock c_active'><b>";
 }else{
 $code = "<div id='tc1' class='p_clock '><b>";
 }
-if(($time >= $quyosh1) and ($time <= $peshin1)){
+if(($time >= "04:00") and ($time <= "07:00")){
 $codet = "<div id='tc2' class='p_clock c_active'><b>";
 }else{
 $codet = "<div id='tc2' class='p_clock '><b>";
 }
-if(($time <= $asr1) or ($time <= "17:21")){
+if(($time >= "07:00") and ($time <= "16:00")){
 $codee = "<div id='tc3' class='p_clock c_active'><b>";
 }else{
 $codee = "<div id='tc3' class='p_clock '><b>";
 }
-if(($time >= $asr1) and ($time <= $shom1)){
+if(($time >= "16:00") and ($time <= "18:00")){
 $codes = "<div id='tc4' class='p_clock c_active'><b>";
 }else{
 $codes = "<div id='tc4' class='p_clock '><b>";
 }
-if(($time >= $shom1) and ($time <= $xufton1)){
+if(($time >= "18:00") and ($time <= "20:30")){
 $coder = "<div id='tc5' class='p_clock c_active'><b>";
 }else{
 $coder = "<div id='tc5' class='p_clock '><b>";
 }
-if(($time >= $xufton1) and ($time <= $tong1)){
+if(($time >= "20:30") and ($time <= "23:59")){
 $cod = "<div id='tc6' class='p_clock c_active'><b>";
 }else{
 $cod = "<div id='tc6' class='p_clock '><b>";
@@ -71,7 +71,6 @@ $xufton = str_replace($cod, "", $ex[433]);
 $xufton = str_replace("</b></div>", "", $xufton);
 $xufton = trim($xufton);
 echo "Namoz vaqtlari<br>
-$asr1 <br>
 Tong: $tong <br>
 Quyosh: $quyosh <br>
 Peshin: $peshin <br>
