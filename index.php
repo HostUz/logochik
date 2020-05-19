@@ -31,7 +31,7 @@ $codet = "<div id='tc2' class='p_clock c_active'><b>";
 }else{
 $codet = "<div id='tc2' class='p_clock '><b>";
 }
-if($time <= $asr1){
+if(($time <= $asr1) or ($time <= "17:21")){
 $codee = "<div id='tc3' class='p_clock c_active'><b>";
 }else{
 $codee = "<div id='tc3' class='p_clock '><b>";
